@@ -1,0 +1,6 @@
+l1=[1,23,4,6,88]
+r=len(l1)
+print(r)
+for i in l1:
+    if i==max(l1):
+        print("the number is greatest in list",i)
