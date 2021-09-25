@@ -1,0 +1,44 @@
+def main():
+    test_case=int(input("enter the number of test cases:"))
+    while test_case>0:
+        s1=input("enter a string S= ")
+        y=s1.lower()
+        print(y)
+        l1=[]
+        l2=[]
+        sum1=0
+        for i in y:
+            index=y.index(i)
+            if index%2==0:
+                print(i)
+                print(index)
+                l1.append(i)
+                sum=0
+                for char in l1:
+                    AsciiArray = ord(char)
+                    sum+=AsciiArray
+            else:
+                print(i)
+                print(index)
+                l2.append(i)
+                sum1=0
+                for char in l2:
+                    AsciiArray = ord(char)
+                    sum1+=AsciiArray
+        print(l1)
+        print(sum)
+        print(l2)
+        print(sum1)
+        print("")
+        if sum1>sum:
+            absolute_difference=sum1-sum
+            print(absolute_difference)
+        else:
+            absolute_difference=sum-sum1
+            print(absolute_difference)
+        if absolute_difference%3==0 or absolute_difference%5==0 or absolute_difference%7==0:
+            print("The given string {} is a Prime String.".format(s1))
+        else:
+            print("The given string{} is a Causal String.".format(s1))
+        test_case-=1
+main()
