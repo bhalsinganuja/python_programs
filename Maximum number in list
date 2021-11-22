@@ -1,6 +1,9 @@
-l1=[1,23,4,6,88]
-r=len(l1)
-print(r)
-for i in l1:
-    if i==max(l1):
-        print("the number is greatest in list",i)
+list1=[12,3,4,6,8,90,45]
+for i in range(0,len(list1)):
+    for j in range(i+1,len(list1)):
+        if list1[i]>list1[j]:
+            temp=list1[i]
+            list1[i]=list1[j]
+            list1[j]=temp
+print(list1)
+print("maximum and minimum number in the list are {0} and {1}".format(list1[-1],list1[0]))
