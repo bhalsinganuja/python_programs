@@ -1,0 +1,42 @@
+import mysql.connector
+a=mysql.connector.connect(host="localhost",user="root",passwd="Sanket@18")
+a1=a.cursor()
+a1.execute("SHOW DATABASES")
+for i in a1:
+    print(i)
+b=mysql.connector.connect(host="localhost",user="root",passwd="Sanket@18",db="college")
+b1=b.cursor()
+b1.execute("CREATE TABLE Student(Roll_no int(3),Name varchar(25),Percent int(3),Address varchar(255),Mob_no int(10))")
+def operations():
+    test=int(input("enter number of test cases"))
+    while(test>0):
+        print("a:Insert values in table \n b:Show Tables \n c:Update data from Table \n d:delete data from tables")
+        print("---------------------------")
+        choice=input("enter your choice a/b/c/d:")
+        print("---------------------------")
+        if choice=="a":
+            d1="INSERT INTO Student (Roll_no,Name,Percent,Address,Mob_no) VALUES(%s,%s,%s,%s,%s)"
+            values=input("enter values with comma seperate:").split(",")
+            b1.execute(d1,values)
+            b.commit()
+        elif choice=="b":
+            b1.execute("SELECT * FROM Student")
+            r=b1.fetchall()
+            for i in r:
+                print(i)
+            print("--------------------------------")
+        elif choice=="c":
+            value1=input("enter new value:")
+            value2=input("enter value to change:")
+            d="UPDATE Student SET {0} WHERE {1}".format(value1,value2)
+            b1.execute(d)
+            b.commit()
+        elif choice=="d":
+            value1=input("enter value to delete")
+            d="DELETE FROM Student WHERE {0}".format(value1)
+            b1.execute(d)
+            b.commit()
+        else:
+            print(b1.rowcount,"row inserted")
+        test-=1
+ operations()
