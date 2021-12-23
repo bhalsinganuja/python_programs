@@ -1,0 +1,10 @@
+#number of unordered pairs of array elements whose product is perfectly divisible by 10
+N=int(input())
+A=list(map(int,input().split()))
+count=0
+for i in range(0,len(A)):
+    for j in range(i+1,len(A)):
+        r=A[i]*A[j]
+        if r%10==0:
+            count+=1
+print("count",count)
