@@ -1,0 +1,30 @@
+import random
+n=10
+your_score=0
+computer_score=0
+while(n!=0):
+    you=input("enter your choice:")
+    list=["rock","paper","scissor"]
+    comp=random.choice(list)
+    print("computer's choice:",comp)
+    if (you=="rock" and comp=="rock") or (you=="scissor" and comp=="scissor") or (you=="paper" and comp=="paper"):
+        print("tie")
+    elif you=="scissor" and comp=="paper" or (you=="paper" and comp=="rock") or (you=="rock" and comp=="scissor"):
+        print('"You win"')
+        your_score+=1
+    else:
+        print('"Computer wins"')
+        computer_score+=1
+    print('"your score="',your_score)
+    print('"computer score="',computer_score)
+    if n<=7:
+        x=input("do you want to play,Yes(y) or No(n):")
+        if x.lower()=="n":
+            break
+    n-=1
+if your_score>computer_score:
+    print('"You win the game"')
+elif your_score<computer_score:
+    print('"Computer win the game"')
+else:
+    print("IT'S A TIE")
