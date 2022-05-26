@@ -1,4 +1,7 @@
 #Angry Professor
+A Discrete Mathematics professor has a class of students. Frustrated with their lack of discipline, he decides to cancel class if fewer than some number of students are present when class starts. Arrival times go from on time () to arrived late ().
+
+Given the arrival time of each student and a threshhold number of attendees, determine if the class is canceled.
 # It must return YES if class is cancelled, or NO otherwise.(The professor wants at least k students in attendance, but only (count<k) have arrived on time so the class is cancelled.)
 ---------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------
@@ -62,9 +65,9 @@ def angryProfessor(k, a):
     else:
         return "NO"
 if __name__ == '__main__':
-    t = int(input().strip())
+    t = int(input().strip())              # the number of test cases.
     for t_itr in range(t):
-        first_multiple_input = input().rstrip().split()
+        first_multiple_input = input().rstrip().split() 
 
         n = int(first_multiple_input[0])
 
